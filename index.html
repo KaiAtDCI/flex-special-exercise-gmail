@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gmail (flex exercise)</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    </head>
+
+    <style>
+
+        * {
+            box-sizing: content-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 2.5em;
+            padding: 0.25em;
+            border: 1px solid lightgrey;
+            font-size: 2em;
+        }
+
+        .header-left {
+            width: 20%;
+            min-width: 20%;
+            white-space: nowrap;
+            background-color: white;
+        }
+
+        .header-middle {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            background-color: white;
+        }
+
+        .header-middle label{
+            margin: 0 0 0 .5em;
+        }
+ 
+        .header-middle input {
+            flex-grow: 1;
+            margin: 0 1em;
+            /* background-color: whitesmoke; */
+        }
+
+        .header-right {
+            display: flex;
+            gap: .25em;
+            background-color: white;
+        }
+
+        aside {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            min-width: 20%;
+            padding: 1em;
+            gap: .5em;
+            background-color: white;
+        }
+
+        .composeButton {
+            height: 1.5em;
+            line-height: 1.5em;
+            padding: .25em;
+            margin-bottom: 1em;
+            border: 1px solid lightgray;
+            border-radius: 1em;
+            box-shadow: 0 2px 1px lightgrey;
+
+        }
+
+        main {
+            display: flex;
+            width: 100%;
+            height:100%;
+            background-color: white;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            line-height: 1em;
+        }
+
+        nav li  {
+            display: flex;
+            gap: .5em
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 1em;
+            background-color: white;
+        }
+
+        .section-top {
+            padding: .25em 0;
+            margin: .25em 0;
+            border-bottom: 1px solid lightgray;
+            font-size: 1.5em;
+            background-color: white;
+        }
+
+        .section-middle {
+            display: flex;
+            gap: 1em;
+            padding: .25em 0;
+            margin: .25em 0;
+            border-bottom: 1px solid lightgray;
+            background-color: white;
+        }
+
+        .filter {
+            border-bottom: 4px solid white;
+            padding: .25em 0;
+            margin: .25em 0;
+        }
+
+        .filter p {
+            display: inline;
+        }
+
+        .filter:hover {
+            color: green;
+            border-bottom: 4px solid green;
+        }
+
+
+ 
+        .section-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: .5em;
+            flex-grow: 1;
+            width: 100%;
+            background-color: white;
+        }
+
+        .subject-line-line {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .subject-line-col1 {
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 2em;
+            align-items: center;
+            justify-content: center;
+        }
+        .subject-line-col2 {
+            flex-shrink: 0;
+            flex-basis: 2em;
+            flex-grow: 1;
+        }
+        .subject-line-col3 {
+            flex-shrink: 0;
+            flex-basis: 4em;
+            flex-grow: 1;
+            font-weight: 700;
+        }
+        .subject-line-col4 {
+            flex-grow: 4;
+            text-align: justify;
+        }
+
+        .subject-line-col5 {
+            flex-shrink: 0;
+            flex-basis: 5em;
+            flex-grow: 1;
+            white-space: nowrap;
+        }
+        
+    </style>
+
+    <body>
+        <header>
+            <div class="header-left">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                Gmail
+            </div>
+            <div class="header-middle">
+                <label for="search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+                <input type="text" name="search" id="search">
+            </div>
+            <div class="header-right">
+                <i class="fa fa-google" aria-hidden="true"></i>
+                <p>Suite</p>
+            </div>
+        </header>
+
+        <main>
+
+            <aside>
+                <div class="composeButton">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Compose
+                </div>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <i class="fa fa-archive" aria-hidden="true"></i>
+                            <p>Inbox 7</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <p>Starred</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <p>Snoozed</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                            <p>Sent</p>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <section>
+                <div class="section-top">
+                    <i class="fa fa-square-o" aria-hidden="true"></i>  
+                    <i class="fa fa-repeat" aria-hidden="true"></i>
+                </div>
+                <div class="section-middle">
+                    <div class="filter">
+                        <i class="fa fa-archive" aria-hidden="true"></i>
+                        <p>Primary</p>
+                    </div>
+                    <div class="filter">
+                        <i class="fa fa-tag" aria-hidden="true"></i>
+                        <p>Promotions</p>
+
+                    </div>
+                    <div class="filter">
+                        <i class="fa fa-tag" aria-hidden="true"></i>
+                        <p>Promotions</p>
+                    </div>
+                </div>
+                <div class="section-bottom">
+
+                    <div class="subject-line-line">
+                        <div class="subject-line-col1">
+                           <i class="fa fa-square-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="subject-line-col2">
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="subject-line-col3">Hi!</div>
+                        <div class="subject-line-col4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis incidunt expedita totam porro, necessitatibus magnam eaque error quasi? Voluptas cum sequi voluptatibus enim cumque deleniti odit quos commodi reprehenderit debitis!</div>
+                        <div class="subject-line-col5">Oct 2</div>
+                    </div>
+
+                    <div class="subject-line-line">
+                        <div class="subject-line-col1">
+                           <i class="fa fa-square-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="subject-line-col2">
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="subject-line-col3">Hello</div>
+                        <div class="subject-line-col4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis incidunt expedita totam porro, necessitatibus magnam eaque error quasi? Voluptas cum sequi voluptatibus enim cumque deleniti odit quos commodi reprehenderit debitis!</div>
+                        <div class="subject-line-col5">Oct 2</div>
+                    </div>
+
+                    <div class="subject-line-line">
+                        <div class="subject-line-col1">
+                           <i class="fa fa-square-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="subject-line-col2">
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="subject-line-col3">Foo</div>
+                        <div class="subject-line-col4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis incidunt expedita totam porro, necessitatibus magnam eaque error quasi? Voluptas cum sequi voluptatibus enim cumque deleniti odit quos commodi reprehenderit debitis!</div>
+                        <div class="subject-line-col5">Oct 2</div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
